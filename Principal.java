@@ -14,9 +14,13 @@ public class Principal {
                     fl = true;
             } while (vida < 3 && !fl);
         }
-        if (fl == true)
-            System.out.println("Ganastes una Muñeca");
+        if (vida == 1)
+            System.out.println("EL PREMIO QUE GANASTES ES : " + Regalo.elegir(vida));
+        else if (vida == 2)
+            System.out.println("EL PREMIO QUE GANASTES ES : " + Regalo.elegir(vida));
+        else if (vida == 3)
+            System.out.println("EL PREMIO QUE GANASTES ES : " + Regalo.elegir(vida));
         else
-            System.out.println("UPS, Perdistes");
+            System.out.println("UPS, PERDISTES");
     }
 }
