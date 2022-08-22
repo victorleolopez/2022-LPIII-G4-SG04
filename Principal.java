@@ -15,7 +15,7 @@ public class Principal {
             } while (vida < 3 && !fl);
         }
         if (fl == true)
-            System.out.println("Adivinastes!!!! ");
+            System.out.println("Ganastes una LAPTOP ASUS 1500G");
         else
             System.out.println("UPS, Perdistes");
     }
