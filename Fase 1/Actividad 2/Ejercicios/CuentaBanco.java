@@ -2,13 +2,13 @@ public class CuentaBanco {
     private String titular;
     private double cantidad;
 
-    public CuentaBanco(String nombre, double cantidad) {
-        this.titular = nombre;
+    public CuentaBanco(String titular, double cantidad) {
+        this.titular = titular;
         this.cantidad = cantidad;
     }
 
-    public CuentaBanco(String nombre) {
-        this.titular = nombre;
+    public CuentaBanco(String titular) {
+        this.titular = titular;
         this.cantidad = 0.0;
     }
 
@@ -30,20 +30,22 @@ public class CuentaBanco {
 
     @Override
     public String toString() {
-        return "CuentaBanco {" + "Titular=" + titular + ", Cantidad=" + cantidad + '}';
+        return "CuentaBanco " + "Titular=" + titular + ", Cantidad=" + cantidad;
     }
 
-    public void Ingresar(double Cantidad) {
-        if (cantidad > 0)
+    public void Ingresar(Double cantidad) {
+        if (cantidad > 0) {
             this.cantidad = this.cantidad + cantidad;
+        }
     }
 
-    public void retirar(double Cantidad) {
+    public void Retirar(Double cantidad) {
         double fondo;
         fondo = this.cantidad - cantidad;
         if (fondo < 0)
             this.cantidad = 0;
-        this.cantidad = fondo;
+        else
+            this.cantidad = fondo;
     }
 
 }
