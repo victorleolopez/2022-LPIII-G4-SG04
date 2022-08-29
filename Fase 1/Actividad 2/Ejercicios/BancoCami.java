@@ -31,14 +31,14 @@ public class BancoCami {
                         case 1:
                             System.out.println("Ingrese la cantidad a depositar: ");
                             ingresar = sc.nextDouble();
-                            Persona.Ingresar(ingresar);
                             System.out.println("La cantidad ingresa a la Cuenta " + nombre + " es S/ " + ingresar);
+                            Persona.Ingresar(ingresar);
                             break;
                         case 2:
                             System.out.println("Ingrese la cantidad a retirar: ");
                             retirar = sc.nextDouble();
-                            Persona.Retirar(retirar);
                             System.out.println("La cantidad retirada a la Cuenta " + nombre + " es S/ " + retirar);
+                            Persona.Retirar(retirar);
                             break;
                         case 3:
                             System.out.println("---- Saldo actual en la Cuenta " + nombre + " es S/ "

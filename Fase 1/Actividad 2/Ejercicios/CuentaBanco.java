@@ -36,15 +36,20 @@ public class CuentaBanco {
     public void Ingresar(Double cantidad) {
         if (cantidad > 0) {
             this.cantidad = this.cantidad + cantidad;
-        }
+        } else
+            System.out.println(" No puedes Ingresa un numero negativo ");
     }
 
     public void Retirar(Double cantidad) {
-        double fondo;
-        fondo = this.cantidad - cantidad;
-        if (fondo < 0)
-            this.cantidad = 0;
+        double fondo = 0;
+        if (cantidad > 0)
+            fondo = this.cantidad - cantidad;
         else
+            fondo = this.cantidad;
+        if (fondo < 0) {
+            System.out.println(" Solo retirastes " + this.cantidad);
+            this.cantidad = 0;
+        } else
             this.cantidad = fondo;
     }
 
