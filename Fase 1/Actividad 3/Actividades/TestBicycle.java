@@ -1,8 +1,6 @@
 public class TestBicycle {
     public static void main(String[] args) {
-
         Bicycle a, b;
-
         a = new Bicycle("Adam Smith", 1);
         b = new Bicycle("Ben Jones", 5);
         a.distanceTraveled(240);

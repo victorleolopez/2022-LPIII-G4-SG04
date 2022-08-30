@@ -1,23 +1,35 @@
 public class Contador {
-
     static int acumulador = 0;
-
+    static int nContadores = 0;
+    static int ultimoContador = 0;
+    final static int VALOR_INICIAL = 10;
     private int valor;
 
     public static int acumulador() {
         return acumulador;
-    } 
+    }
+
+    // public Contador(int valor) {
+    // this.valor = valor;
+    // acumulador += valor;
+    // Contador.VALOR_INICIAL += valor;
+    // }
 
     public Contador(int valor) {
         this.valor = valor;
         acumulador += valor;
-        this.acumulador+=valor; //3.a.1 Cambiar en el constructor Contador
-        Contador.acumulador+=valor; //3.a.2 Cambiar en el constructor Contador
+        nContadores++;
+        ultimoContador = valor;
+    }
+
+    public Contador() {
+        this(Contador.VALOR_INICIAL);
+        nContadores++;
+        ultimoContador = valor;
     }
 
     public void inc() {
         valor++;
-        this.valor++;
         acumulador++;
     }
 
