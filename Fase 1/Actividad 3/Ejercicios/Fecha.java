@@ -88,7 +88,6 @@ public class Fecha {
         }
     }
 
-    // Método toString para mostrar la fecha
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -105,4 +104,4 @@ public class Fecha {
         sb.append(año);
         return sb.toString();
     }
-} // Fin de la clase Fecha
+}

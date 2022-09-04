@@ -36,10 +36,10 @@ public class Coordenada {
         this.y = y;
     }
 
-    public double distancia(Coordenada C) {
+    public static double distancia(Coordenada C) {
         double resultado;
-        resultado = Math.pow(C.x - 0, 2) + Math.pow(C.y - 0, 2);
-        Math.sqrt(resultado);
+        resultado = Math.pow(C.x, 2) + Math.pow(C.y, 2);
+        resultado = Math.sqrt(resultado);
         return resultado;
 
     }
@@ -47,7 +47,7 @@ public class Coordenada {
     public static double distancia(Coordenada C1, Coordenada C2) {
         double resultado;
         resultado = Math.pow(C2.x - C1.x, 2) + Math.pow(C2.y - C1.y, 2);
-        Math.sqrt(resultado);
+        resultado = Math.sqrt(resultado);
         return resultado;
     }
 

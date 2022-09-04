@@ -8,12 +8,9 @@ public class Rectangulo {
         this.esquina2 = C2;
     }
 
-    public Rectangulo(int base, int altura) {
-        Coordenada VerticeInfIzquierta, VerticeInfDerecho, VerticeSupDerecho, VerticeSupIzquierta;
-        VerticeSupIzquierta = new Coordenada(0, altura);
-        VerticeSupDerecho = new Coordenada(base, altura);
-        VerticeInfDerecho = new Coordenada(base, 0);
-        VerticeInfIzquierta = new Coordenada(0, 0);
+    public Rectangulo(int CompX, int CompY) {
+        this.esquina1 = new Coordenada(0, CompY);
+        this.esquina2 = new Coordenada(CompX, 0);
     }
 
     // get se encarga de mostrar un valor a una propiedad o atributo de un objeto
