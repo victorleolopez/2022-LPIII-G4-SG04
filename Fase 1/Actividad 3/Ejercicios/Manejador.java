@@ -1,37 +1,46 @@
 public class Manejador {
 
-    public static double area(int CompX, int CompY) {
+    public static double area(Rectangulo R) {
         double area, altura, base;
-        Rectangulo R = new Rectangulo(CompX, CompY);
-        altura = Coordenada.distancia(R.getEsquina1());
-        base = Coordenada.distancia(R.getEsquina2());
+        Coordenada nuevoX, nuevoY;
+        nuevoX = R.getEsquina1();
+        nuevoY = R.getEsquina2();
+        Coordenada inferior = new Coordenada(nuevoX.getX(), nuevoY.getY());
+        altura = Coordenada.distancia(inferior, R.getEsquina1());
+        base = Coordenada.distancia(inferior, R.getEsquina2());
         area = altura * base;
+
         return area;
     }
 
-    public static double perimetro(int CompX, int CompY) {
+    public static double perimetro(Rectangulo R) {
         double Perimetro, altura, base;
-        Rectangulo R = new Rectangulo(CompX, CompY);
-        altura = Coordenada.distancia(R.getEsquina1());
-        base = Coordenada.distancia(R.getEsquina2());
+        Coordenada nuevoX, nuevoY;
+        nuevoX = R.getEsquina1();
+        nuevoY = R.getEsquina2();
+        Coordenada inferior = new Coordenada(nuevoX.getX(), nuevoY.getY());
+        altura = Coordenada.distancia(inferior, R.getEsquina1());
+        base = Coordenada.distancia(inferior, R.getEsquina2());
         Perimetro = (altura * 2) + (base * 2);
         return Perimetro;
     }
 
-    public static void moverX(int num, int CompX, int CompY) {
-        Coordenada nuevoX;
-        Rectangulo R = new Rectangulo(CompX + num, CompY);
+    public static void moverX(int num, Rectangulo R) {
+        Coordenada nuevoX, nuevoY;
         nuevoX = R.getEsquina1();
-        nuevoX.setx(num);
+        nuevoY = R.getEsquina2();
+        nuevoX.setx(num + nuevoX.getX());
+        nuevoY.setx(num + nuevoY.getX());
         System.out.println(R.getEsquina1());
         System.out.println(R.getEsquina2());
     }
 
-    public static void moverY(int num, int CompX, int CompY) {
-        Coordenada nuevoY;
-        Rectangulo R = new Rectangulo(CompX, CompY + num);
+    public static void moverY(int num, Rectangulo R) {
+        Coordenada nuevoX, nuevoY;
+        nuevoX = R.getEsquina1();
         nuevoY = R.getEsquina2();
-        nuevoY.setY(num);
+        nuevoX.setY(num + nuevoX.getY());
+        nuevoY.setY(num + nuevoY.getY());
         System.out.println(R.getEsquina1());
         System.out.println(R.getEsquina2());
     }

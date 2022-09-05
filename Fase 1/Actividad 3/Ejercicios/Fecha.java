@@ -1,5 +1,9 @@
-public class Fecha {
+import java.time.Duration;
+import java.time.LocalDate;
+import java.time.Period;
+import java.util.Scanner;
 
+public class Fecha {
     private int dia;
     private int mes;
     private int año;
@@ -8,7 +12,8 @@ public class Fecha {
     public Fecha() {
         this.dia = 01;
         this.mes = 01;
-        this.año = 2000;
+        this.año = 1900;
+        valida();
     }
 
     // Constructor con parámetros
@@ -16,6 +21,7 @@ public class Fecha {
         this.dia = dia;
         this.mes = mes;
         this.año = año;
+        valida();
     }
 
     // setters y getters
@@ -43,14 +49,52 @@ public class Fecha {
         return año;
     }
 
-    // Método para comprobar si la fecha es correcta
-    public boolean fechaCorrecta() {
+    public void leer() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Introduce fecha: ");
+        System.out.println("Ingrese dia (1-31): ");
+        dia = sc.nextInt();
+        System.out.println("Ingrese mes (1-12): ");
+        mes = sc.nextInt();
+        System.out.println("Ingrese año (1900-2050) : ");
+        año = sc.nextInt();
+        valida();
+        sc.close();
+    }
+
+    public int diasMes(int num) {
+        int tdias = 0;
+        switch (mes) {
+            case 2:
+                if (Bisiesto()) {
+                    tdias = 29;
+                } else {
+                    tdias = 28;
+                }
+                break;
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                tdias = 30;
+                break;
+            default:
+                tdias = 31;
+        }
+        return tdias;
+    }
+
+    private boolean Bisiesto() {
+        return (año % 4 == 0 && año % 100 != 0 || año % 400 == 0);
+    }
+
+    public boolean valida() {
         boolean diaCorrecto, mesCorrecto, añoCorrecto;
-        añoCorrecto = año > 0;
+        añoCorrecto = año >= 1900 && año <= 2050;
         mesCorrecto = mes >= 1 && mes <= 12;
         switch (mes) {
             case 2:
-                if (esBisiesto()) {
+                if (Bisiesto()) {
                     diaCorrecto = dia >= 1 && dia <= 29;
                 } else {
                     diaCorrecto = dia >= 1 && dia <= 28;
@@ -65,43 +109,54 @@ public class Fecha {
             default:
                 diaCorrecto = dia >= 1 && dia <= 31;
         }
+        if (diaCorrecto && mesCorrecto && añoCorrecto) {
+            System.out.println("Fecha introducida: " + corta());
+        } else {
+            auxiliar();
+            System.out.println("Fecha introducida: " + corta());
+        }
         return diaCorrecto && mesCorrecto && añoCorrecto;
     }
 
-    // Método privado para comprobar si el año es bisiesto
-    // Este método lo utiliza el método fechaCorrecta
-    private boolean esBisiesto() {
-        return (año % 4 == 0 && año % 100 != 0 || año % 400 == 0);
+    private void auxiliar() {
+        dia = 01;
+        mes = 01;
+        año = 1900;
     }
 
-    // Método que modifica la fecha cambiándola por la del día siguiente
-    public void diaSiguiente() {
-        dia++;
-        if (!fechaCorrecta()) {
-            dia = 1;
-            mes++;
-            if (!fechaCorrecta()) {
-                mes = 1;
-                año++;
-            }
-
-        }
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
+    public StringBuilder corta() {
+        StringBuilder fcorto = new StringBuilder();
         if (dia < 10) {
-            sb.append("0");
+            fcorto.append("0");
         }
-        sb.append(dia);
-        sb.append("-");
+        fcorto.append(dia);
+        fcorto.append("-");
         if (mes < 10) {
-            sb.append("0");
+            fcorto.append("0");
         }
-        sb.append(mes);
-        sb.append("-");
-        sb.append(año);
-        return sb.toString();
+        fcorto.append(mes);
+        fcorto.append("-");
+        fcorto.append(año);
+        return fcorto;
     }
+
+    public int diasTranscurridos() {
+        StringBuilder fcorto = new StringBuilder();
+        fcorto.append(año);
+        fcorto.append("-");
+        if (mes < 10) {
+            fcorto.append("0");
+        }
+        fcorto.append(mes);
+        fcorto.append("-");
+        if (dia < 10) {
+            fcorto.append("0");
+        }
+        fcorto.append(dia);
+        LocalDate FeIncial = LocalDate.parse("1900-01-01");
+        LocalDate FeFinal = LocalDate.parse(fcorto);
+        Duration totaldias = Duration.between(FeIncial.atStartOfDay(), FeFinal.atStartOfDay());
+        return (int) totaldias.toDays();
+    }
+
 }
