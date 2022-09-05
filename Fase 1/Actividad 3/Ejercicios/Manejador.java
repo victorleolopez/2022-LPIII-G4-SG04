@@ -9,7 +9,6 @@ public class Manejador {
         altura = Coordenada.distancia(inferior, R.getEsquina1());
         base = Coordenada.distancia(inferior, R.getEsquina2());
         area = altura * base;
-
         return area;
     }
 

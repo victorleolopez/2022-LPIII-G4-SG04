@@ -1,12 +1,14 @@
 import java.time.Duration;
 import java.time.LocalDate;
-import java.time.Period;
 import java.util.Scanner;
 
 public class Fecha {
     private int dia;
     private int mes;
     private int año;
+    protected int[] diasPorMes = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+    protected int[] diasAcumulados = { 0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334 };
+    protected int[] diasAcumuladosEnBisiesto = { 0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335 };
 
     // Constructor por defecto
     public Fecha() {
@@ -159,4 +161,96 @@ public class Fecha {
         return (int) totaldias.toDays();
     }
 
+    public String Semanadia() {
+        String[] dias = { "Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado" };
+        String diaDeLaSemana = dias[this.diasTranscurridos() % 7];
+        return diaDeLaSemana;
+    }
+
+    public String larga() {
+        String[] meses = { "enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre",
+                "octubre", "noviembre", "diciembre" };
+        String formato = String.format("%s %d de %s de %d", this.Semanadia(), this.dia, meses[this.mes - 1], this.año);
+        return formato;
+    }
+
+    public boolean fechaTras(long dias) {
+        this.dia = 1;
+        this.mes = 1;
+        this.año = 1900;
+        while (dias > 0) {
+            this.siguiente();
+            dias--;
+        }
+        return false;
+    }
+
+    public int diasEntre(Fecha fecha) {
+        return Math.abs(this.diferenciaEntreFechas(fecha));
+    }
+
+    public void siguiente() {
+        if (this.dia == diasMes(this.mes)) {
+            this.dia = 1;
+            if (this.mes == 12) {
+                this.mes = 1;
+                this.año++;
+            } else {
+                this.mes++;
+            }
+        } else {
+            this.dia++;
+        }
+    }
+
+    public void anterior() {
+        if (this.dia == 1) {
+            if (this.mes == 1) {
+                this.dia = 31;
+                this.mes = 12;
+                this.año--;
+            } else {
+                this.dia = 31;
+                this.mes--;
+            }
+        } else {
+            this.dia--;
+        }
+    }
+
+    public Fecha copia() {
+        return new Fecha(this.año, this.mes, this.dia);
+    }
+
+    private int diferenciaEntreFechas(Fecha fecha) {
+        int diferencia1 = diferenciaDelOrigen(fecha.dia, fecha.mes, fecha.año);
+        int diferencia2 = diferenciaDelOrigen(this.dia, this.mes, this.año);
+        return diferencia2 - diferencia1;
+    }
+
+    public boolean igualQue(Fecha fecha) {
+        return (this.año == fecha.año && this.mes == fecha.mes && this.dia == fecha.dia);
+    }
+
+    public boolean menorQue(Fecha fecha) {
+        return this.diferenciaEntreFechas(fecha) < 0;
+    }
+
+    public boolean mayorQue(Fecha fecha) {
+        return this.diferenciaEntreFechas(fecha) > 0;
+    }
+
+    private int diferenciaDelOrigen(int dia, int mes, int ano) {
+        int dias;
+        if (this.Bisiesto()) {
+            ano--;
+            int anosBisiestos = ano / 4 - ano / 100 + ano / 400;
+            dias = ano * 365 + anosBisiestos + diasAcumuladosEnBisiesto[mes - 1] + dia - 1;
+        } else {
+            ano--;
+            int anosBisiestos = ano / 4 - ano / 100 + ano / 400;
+            dias = ano * 365 + anosBisiestos + diasAcumulados[mes - 1] + dia - 1;
+        }
+        return dias;
+    }
 }

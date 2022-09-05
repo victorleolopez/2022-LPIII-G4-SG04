@@ -1,27 +1,27 @@
 public class Rectangulo {
     private Coordenada esquina1;
     private Coordenada esquina2;
-    private String colores;
-    static int nContadores = 0;
+    private String colors;
+    static int nAcumuladores = 0;
 
     // Constructor
     public Rectangulo(Coordenada C1, Coordenada C2) {
         this.esquina1 = C1;
         this.esquina2 = C2;
-        nContadores++;
-        this.colores = controlcolor();
+        // nAcumuladores++;
+        this.colors = controlcolor();
     }
 
     public Rectangulo(int CompX, int CompY) {
         this.esquina1 = new Coordenada(0, CompY);
         this.esquina2 = new Coordenada(CompX, 0);
-        nContadores++;
-        this.colores = controlcolor();
+        nAcumuladores++;
+        this.colors = controlcolor();
     }
 
     public String controlcolor() {
         String color = "";
-        switch (nContadores) {
+        switch (nAcumuladores) {
             case 1:
                 color = "Verde";
                 break;
@@ -30,18 +30,16 @@ public class Rectangulo {
                 break;
             case 3:
                 color = "Rojo";
-                nContadores = 0;
+                nAcumuladores = 0;
                 break;
         }
         return color;
     }
 
-    // get se encarga de mostrar un valor a una propiedad o atributo de un objeto
     public Coordenada getEsquina1() {
         return esquina1;
     }
 
-    // set permite modificar el valor de un atributo de un objeto
     public void setEsquina1(Coordenada C) {
         this.esquina1 = C;
     }
@@ -55,15 +53,15 @@ public class Rectangulo {
     }
 
     public String getColor() {
-        return colores;
+        return colors;
     }
 
     public void setColor(String color) {
-        this.colores = color;
+        this.colors = color;
     }
 
     public String toString() {
-        return ">> Coordenada 1 : " + esquina1 + ", Coordenada 2 : " + esquina2 + ", Color : " + colores;
+        return "\t>> Coordenada 1 : " + esquina1 + ", Coordenada 2 : " + esquina2 + ", Color : " + colors;
     }
 
 }
