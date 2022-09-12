@@ -1,4 +1,4 @@
-public class principalCampañas {
+public class mainCampañas {
 
     public static void main(String[] args) {
         Compañias sale = new Compañias();
@@ -6,5 +6,4 @@ public class principalCampañas {
         sale.CalcularVenta();
         sale.mostrarTotal();
     }
-
 }

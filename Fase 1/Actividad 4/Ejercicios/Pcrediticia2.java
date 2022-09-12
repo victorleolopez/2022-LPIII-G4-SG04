@@ -35,7 +35,7 @@ public class Pcrediticia2 {
                         if (bdPersonas[i][1] == 2) {
                             bdPersonas[i][j] = 0;
                         } else {
-                            System.out.print("Ingresa su sueldo (si tiene un trabajo, sino sera un cero) : ");
+                            System.out.print("Ingresa su sueldo 950 y 3000 (valor entero) : ");
                             bdPersonas[i][j] = sn.nextInt();
                             if (bdPersonas[i][j] > 0) {
                                 while (bdPersonas[i][j] > 3000 || bdPersonas[i][j] < 950) {
@@ -66,7 +66,7 @@ public class Pcrediticia2 {
         System.out.println("8. Salir");
     }
 
-    // Porcentaje de Hombres
+    // Porcentaje de hombres (tengan o no trabajo).
     public static double porHombres(int[][] bdPersonas) {
         double Por = 0;
         for (int i = 0; i < bdPersonas.length; i++) {
@@ -80,7 +80,7 @@ public class Pcrediticia2 {
         return Por;
     }
 
-    // Porcentaje de Mujer
+    // Porcentaje de mujeres (tengan o no trabajo).
     public static double porMujer(int[][] bdPersonas) {
         double Por = 0;
         for (int i = 0; i < bdPersonas.length; i++) {
@@ -94,7 +94,7 @@ public class Pcrediticia2 {
         return Por;
     }
 
-    // Porcentaje de Hombres que trabajan
+    // Porcentaje de hombres que trabajan
     public static double porHombresTrabajan(int[][] bdPersonas) {
         int numero = 0;
         double trabajo = 0;
@@ -112,7 +112,7 @@ public class Pcrediticia2 {
         return trabajo;
     }
 
-    // Porcentaje de Mujeres que trabajan
+    // ) Porcentaje de mujeres que trabajan
     public static double porMujeresTrabajan(int[][] bdPersonas) {
         int numero = 0;
         double trabajo = 0;

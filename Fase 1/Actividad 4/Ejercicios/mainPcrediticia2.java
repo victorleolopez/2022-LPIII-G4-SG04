@@ -7,6 +7,7 @@ public class mainPcrediticia2 {
         boolean salir = false;
         int opcion = 0;
         boolean rellenado = false;
+        System.out.println(" *****************  BIENVENIDOS AL SISTEMA ***************** ");
         // Menu
         do {
             Pcrediticia2.menu();
@@ -77,7 +78,7 @@ public class mainPcrediticia2 {
                     System.out.println("Tienes que meter un valor entre 1 y 8");
             }
         } while (!salir);
-        System.out.println("FIN");
+        System.out.println(" *****************  SALIDA DEL SISTEMA ***************** ");
         SC.close();
 
     }

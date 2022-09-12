@@ -4,41 +4,41 @@ public class Compañias {
 
     private int[][] baseDatos = new int[cantProductos][cantVendedores];
     private int ventas[][] = new int[cantProductos][2];
-    private final int[] preciosProductos = { 10, 20, 30, 40, 50 };
+    private final int[] preciosProductos = { 10, 2, 3, 5, 6 };
 
     public void IngresarDatos() {
-        baseDatos[0][0] = 5;
-        baseDatos[0][1] = 6;
-        baseDatos[0][2] = 7;
-        baseDatos[0][3] = 8;
+        baseDatos[0][0] = 500;
+        baseDatos[0][1] = 500;
+        baseDatos[0][2] = 600;
+        baseDatos[0][3] = 800;
 
-        baseDatos[1][0] = 1;
-        baseDatos[1][1] = 0;
-        baseDatos[1][2] = 9;
-        baseDatos[1][3] = 1;
+        baseDatos[1][0] = 500;
+        baseDatos[1][1] = 600;
+        baseDatos[1][2] = 700;
+        baseDatos[1][3] = 100;
 
-        baseDatos[2][0] = 2;
-        baseDatos[2][1] = 2;
+        baseDatos[2][0] = 200;
+        baseDatos[2][1] = 200;
         baseDatos[2][2] = 0;
         baseDatos[2][3] = 0;
 
-        baseDatos[3][0] = 1;
-        baseDatos[3][1] = 3;
-        baseDatos[3][2] = 2;
+        baseDatos[3][0] = 180;
+        baseDatos[3][1] = 350;
+        baseDatos[3][2] = 250;
         baseDatos[3][3] = 0;
 
-        baseDatos[4][0] = 0;
-        baseDatos[4][1] = 0;
-        baseDatos[4][2] = 0;
-        baseDatos[4][3] = 0;
+        baseDatos[4][0] = 500;
+        baseDatos[4][1] = 600;
+        baseDatos[4][2] = 100;
+        baseDatos[4][3] = 200;
     }
 
     public void CalcularVenta() {
         // int sumaVendedor = 0;
         for (int j = 0; j < cantProductos; ++j) {
             for (int i = 0; i < cantVendedores; ++i) {
-                if (baseDatos[i][j] > 0) {
-                    ventas[i][0] += baseDatos[i][j] * preciosProductos[i];
+                if (baseDatos[j][i] > 0) {
+                    ventas[j][0] += baseDatos[j][i] * preciosProductos[j];
                 }
             }
         }
@@ -54,21 +54,24 @@ public class Compañias {
     }
 
     public void mostrarTotal() {
-        System.out.printf("%25s\n", "VENDEDORES");
-        System.out.printf("%10s%10s%10s%10s%23s", "1", "2", "3", "4", "**** Total de Productos **** \n\n");
+        System.out.printf("%65s\n", "\\\\\\ TODOS LOS VENDEDORES /////");
+        System.out.println();
+        System.out.printf("%21s%20s%20s%20s%25s", "VENDEDOR 1", "VENDEDOR 2", "VENDEDOR 3", "VENDEDOR 4",
+                "TOTAL VENDIDO \n\n");
 
         for (int i = 0; i < cantProductos; i++) {
             System.out.printf("%d", (i + 1));
             for (int j = 0; j < cantVendedores; j++) {
-                System.out.printf("%10d", baseDatos[i][j]);
+                System.out.printf("%20d", baseDatos[i][j]);
                 if (j == 3) {
-                    System.out.printf("%15d", baseDatos[i][j]);
+                    System.out.printf("%25d", ventas[i][0]);
                 }
             }
             System.out.println();
         }
+        System.out.print(" ");
         for (int i = 0; i < cantVendedores; i++) {
-            System.out.printf("%10d", baseDatos[i][1]);
+            System.out.printf("%20d", ventas[i][1]);
         }
     }
 }
