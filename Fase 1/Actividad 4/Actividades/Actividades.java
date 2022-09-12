@@ -105,12 +105,11 @@ public class Actividades {
     // Rellena la matriz con valores insertados por el usuario
     public static void Imprimir(int[][] matriz) {
         System.out.println("");
-        System.out.println("       ++++ Matriz ++++");
+        System.out.println("           Matriz                           ");
         for (int i = 0; i < matriz.length; i++) {
             for (int j = 0; j < matriz[0].length; j++) {
                 System.out.printf("%5d ", matriz[i][j]);
             }
-            System.out.println("");
         }
         System.out.println("");
     }
@@ -145,7 +144,7 @@ public class Actividades {
         return suma;
     }
 
-    // Suma los valores de una determinada Diagonal
+    // Suma los valores de una determinada Diagonal Principal
     public static int sumaDiagonalPrincipal(int[][] matriz) {
         int suma = 0;
         for (int i = 0; i < matriz.length; i++) {
