@@ -13,10 +13,6 @@ public class Automovil {
         this.modelo = modelo;
     }
 
-    public String toString() {
-        return "";
-    }
-
     public String getPlaca() {
         return placa;
     }
@@ -55,6 +51,12 @@ public class Automovil {
 
     public void setMotor(Motor motor) {
         this.motor = motor;
+    }
+
+    public String toString() {
+
+        return " placa " + placa + " Numero de Puertas " + numPuertas + " Marca " + marca + " Modelo " + modelo
+                + "  MOTOR: ---- " + motor;
     }
 
 }

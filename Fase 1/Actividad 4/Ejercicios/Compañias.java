@@ -4,7 +4,7 @@ public class Compañias {
 
     private int[][] baseDatos = new int[cantProductos][cantVendedores];
     private int ventas[][] = new int[cantProductos][2];
-    private final int[] preciosProductos = { 10, 2, 3, 5, 6 };
+    private final int[] preciosProductos = { 1, 1, 1, 1, 1 };
 
     public void IngresarDatos() {
         baseDatos[0][0] = 500;
