@@ -1,9 +1,8 @@
 public class Contacto {
-
-    // Creamos los atributos del contacto
     private String nombre;
     private int telefono;
     private String direccion;
+    // Creamos los atributos del contacto
 
     public Contacto(String nombre, int telefono, String dirrecion) {
         this.nombre = nombre;

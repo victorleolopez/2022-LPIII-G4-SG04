@@ -30,7 +30,14 @@ public class Banco {
 
     @Override
     public String toString() {
-        return "Banco{" + "nombre=" + nombre + ", clientes=" + clientes + '}';
+        String NuPer = "";
+        for (int i = 0; i < clientes.length; i++) {
+            if (clientes[i] == null) {
+            } else {
+                NuPer = NuPer + "  " + clientes[i].toString() + "\n";
+            }
+        }
+        return " Banco { " + " NOMBRE = " + nombre + " \n CLIENTES {" + "\n" + NuPer + "}";
     }
 
     public void agregarCliente(Persona persona) {
@@ -46,29 +53,31 @@ public class Banco {
                     registrado = true;
                 }
             }
-
             if (registrado == true) {
-                System.out.println("\nEl contacto se ha registrado con exito !!");
+                // System.out.println("\nEl contacto se ha registrado con exito !!");
             } else {
-                System.out.println("\nNo se ha podido registrar el contacto");
+                // System.out.println("\nNo se ha podido registrar el contacto");
             }
         }
     }
 
-    }
-
-    public Persona darBajaCliente(Persona[] persona) {
-        String nombre=sc.next();
-		Telphone tel=new Telphone();
-        for(int i=0;i<list.size();i++) {
-			tel=(Telphone) list.get(i);
-			if(tel.getName().equals(name)) {
-				list.remove(i);
-				System.out.println("eliminado correctamente!");
-				return 0;
+    public void darBajaCliente(Persona persona) {
+        boolean eliminado = false;
+        for (int i = 0; i < clientes.length && !eliminado; i++) {
+            if (clientes[i] != null && clientes[i].equals(persona)) {
+                clientes[i] = null;
+                eliminado = true;
+            }
+        }
+        if (eliminado == true) {
+            System.out.println("\nEl contacto se ha eliminado");
+        } else {
+            System.out.println("\nEl contacto no se ha eliminado");
+        }
     }
 
     public boolean buscarCliente(Persona persona) {
+        return false;
 
     }
 
@@ -93,5 +102,4 @@ public class Banco {
         }
         return true;
     }
-
 }
