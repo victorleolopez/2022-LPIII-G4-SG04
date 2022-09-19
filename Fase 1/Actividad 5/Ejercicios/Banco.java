@@ -39,7 +39,7 @@ public class Banco {
                 NuPer = NuPer + clientes[i].toString() + "\n";
             }
         }
-        return " Banco { " + " NOMBRE = " + nombre + " \n CLIENTES {" + "\n" + NuPer + "}";
+        return " BANCO " + nombre + " \n **************** CLIENTES ****************" + "\n" + NuPer + "**********************************************";
     }
 
     public void agregarCliente(Persona persona) {
@@ -103,12 +103,15 @@ public class Banco {
         }
         switch (tipo) {
             case 'C':
+                System.out.println(" \n ************** cliente ************** ");
                 System.out.println(clienteC);
                 break;
             case 'B':
+                System.out.println(" \n ********** Banca Exclusiva ********** ");
                 System.out.println(clienteB);
                 break;
             case 'E':
+                System.out.println(" \n ************ Empresarial ************ ");
                 System.out.println(clienteE);
                 break;
         }

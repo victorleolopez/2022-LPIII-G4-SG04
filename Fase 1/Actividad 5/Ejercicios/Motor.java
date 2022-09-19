@@ -23,6 +23,7 @@ public class Motor {
         this.revPorMin = revPorMin;
     }
 
+    @Override
     public String toString() {
         return String.format("No. Motor   : %s\nRPM         : %s\n", numMotor, revPorMin);
     }

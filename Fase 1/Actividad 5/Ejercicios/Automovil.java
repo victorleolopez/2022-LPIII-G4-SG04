@@ -53,6 +53,7 @@ public class Automovil {
         this.motor = motor;
     }
 
+    @Override
     public String toString() {
         if (motor == null)
             return String.format("Automovil sin motor \nPlaca       : %s\nNo. Puertas : %s\nMarca       : %s\nModelo      : %s\n", placa, numPuertas, marca, modelo);

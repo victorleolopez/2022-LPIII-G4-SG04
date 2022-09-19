@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Banco {
     private String nombre;
     private Persona clientes[];
@@ -77,12 +79,23 @@ public class Banco {
     }
 
     public boolean buscarCliente(Persona persona) {
+        for (int i = 0; i < clientes.length; i++) {
+            if (clientes[i] != null) {
+                if (clientes[i].equals(persona))
+                    return true;
+            }
+        }
         return false;
-
     }
 
     public void clienteTipo(char tipo) {
-        // Completa
+        ArrayList<Persona> TipCliente = new ArrayList<Persona>();
+        for (int i = 0; i < clientes.length; i++) {
+            if (clientes[i] != null) {
+                TipCliente.add(clientes[i]);
+            }
+        }
+        System.out.println(tipo);
     }
 
     public boolean comprobarSiExisteCliente(Persona persona) {

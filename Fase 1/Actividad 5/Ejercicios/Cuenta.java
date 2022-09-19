@@ -45,6 +45,12 @@ public class Cuenta {
     public char getTipoCliente() {
         return tipoCliente;
     }
+    
+    @Override
+    public String toString() {
+        // complete con la informacion requerida
+        return String.format("No. Cuenta : %s%s\tSaldo :  %.2f", tipoCliente, numero, saldo);
+    }
 
     public void retirar(double Cantidad) {
         if (saldo > 50 && Cantidad <= saldo && Cantidad > 0) {
@@ -76,9 +82,5 @@ public class Cuenta {
         return saldos;
     }
 
-    @Override
-    public String toString() {
-        // complete con la informacion requerida
-        return String.format("No. Cuenta : %s%s\tSaldo :  %.2f", tipoCliente, numero, saldo);
-    }
+
 }
