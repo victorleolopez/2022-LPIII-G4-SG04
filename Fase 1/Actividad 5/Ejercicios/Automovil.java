@@ -59,5 +59,4 @@ public class Automovil {
         else
             return String.format("Automovil con motor \nPlaca       : %s\nNo. Motor   : %s\nNo. Puertas : %s\nMarca       : %s\nModelo      : %s\nRPM         : %s\n", placa, motor.getNumMotor(),numPuertas, marca, modelo,motor.getRevPorMin() );
     }
-
 }

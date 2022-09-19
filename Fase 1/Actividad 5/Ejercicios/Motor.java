@@ -24,7 +24,7 @@ public class Motor {
     }
 
     public String toString() {
-        return "NUMERO DE MOTOR " + numMotor + " REVOLUCIONES POR MINUTO " + revPorMin;
+        return String.format("No. Motor   : %s\nRPM         : %s\n", numMotor, revPorMin);
     }
 
 }
