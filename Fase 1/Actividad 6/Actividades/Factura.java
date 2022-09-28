@@ -1,4 +1,4 @@
-public class Factura implements PorPagar{
+public class Factura implements PorPagar {
     private String numeroPieza;
     private String descripcionPieza;
     private int cantidad;
@@ -7,17 +7,50 @@ public class Factura implements PorPagar{
     public Factura(String numeroPieza, String descripcionPieza, int cuenta, double precio) {
         this.numeroPieza = numeroPieza;
         this.descripcionPieza = descripcionPieza;
-        establecerCantidad(cuenta);
-        establecerPrecioPorArticulo(precio);
+        setCantidad(cuenta);
+        setPrecioporArticulo(precio);
     }
 
-    private void establecerPrecioPorArticulo(double precio) {
+    public String getNumeroPieza() {
+        return numeroPieza;
     }
 
-    private void establecerCantidad(int cuenta) {
+    public void setNumeroPieza(String numeroPieza) {
+        this.numeroPieza = numeroPieza;
     }
+
+    public String getDescripcionPieza() {
+        return descripcionPieza;
+    }
+
+    public void setDescripcionPieza(String descripcionPieza) {
+        this.descripcionPieza = descripcionPieza;
+    }
+
+    public int getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
+    }
+
+    public double getPrecioporArticulo() {
+        return precioporArticulo;
+    }
+
+    public void setPrecioporArticulo(double precioporArticulo) {
+        this.precioporArticulo = precioporArticulo;
+    }
+
     @Override
-    public double obtenerMontoPago(){
-        return obtenerCantidad()*obtenerPrecioPorArticulo();
+    public double getMontoPago() {
+        return getCantidad() * getPrecioporArticulo();
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%s %s (%s)\nCantidad: %s\nPrecio por Articulo: $%,.2f", "Factura:\nNumero de Pieza:",
+                numeroPieza, descripcionPieza, cantidad, precioporArticulo);
     }
 }

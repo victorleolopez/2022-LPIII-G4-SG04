@@ -1,3 +1,3 @@
 public interface PorPagar {
-    double obtenerMontoPago();
+    double getMontoPago();
 }

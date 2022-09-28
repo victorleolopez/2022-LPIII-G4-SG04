@@ -4,14 +4,24 @@ public class EmpleadoAsalariado extends Empleado {
     public EmpleadoAsalariado(String primerNombre, String apellidoPaterno, String numeroSeguroSocial,
             double salario) {
         super(primerNombre, apellidoPaterno, numeroSeguroSocial);
-        estableceSalarioSemanal(salario);
+        setSalarioSemanal(salario);
     }
 
-    private void estableceSalarioSemanal(double salario) {
+    public double getSalarioSemanal() {
+        return salarioSemanal;
+    }
+
+    public void setSalarioSemanal(double salarioSemanal) {
+        this.salarioSemanal = salarioSemanal;
     }
 
     @Override
-    public double obtenerMontoPago(){
-        return obtenerSalarioSemanal();
+    public double getMontoPago(){
+        return getSalarioSemanal();
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Empleado Asalariado: %s\nSalario Semanal: $%,.2f",super.toString(),salarioSemanal);
     }
 }
