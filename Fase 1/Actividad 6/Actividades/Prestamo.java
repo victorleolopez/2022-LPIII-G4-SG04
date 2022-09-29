@@ -3,9 +3,14 @@ public class Prestamo implements PorPagar {
     private double montoDeCuota;
 
     public Prestamo(int numeroDeCuotas, double montoDeCuota) {
-        setNumeroDeCuotas(numeroDeCuotas);
-        setMontoDeCuota(montoDeCuota);
+        this.numeroDeCuotas = numeroDeCuotas;
+        this.montoDeCuota = montoDeCuota;
     }
+
+    // public Prestamo(int numeroDeCuotas, double montoDeCuota) {
+    //     setNumeroDeCuotas(numeroDeCuotas);
+    //     setMontoDeCuota(montoDeCuota);
+    // }
 
     public int getNumeroDeCuotas() {
         return numeroDeCuotas;
