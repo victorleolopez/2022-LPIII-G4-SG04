@@ -1,25 +1,55 @@
 public class Auto implements ImpactoEcologico {
-    private double FACTOR_DE_EMISION=0.3;
+    private final double factor_de_Emision = 0.3;
+    private double comsumoCombustible;
+    private double usoacero;
+    private double tiempoVida;
 
-    public double getFACTOR_DE_EMISION() {
-        return FACTOR_DE_EMISION;
+    public Auto(double comsumoCombustible, double usoacero, double tiempoVida) {
+        this.comsumoCombustible = comsumoCombustible;
+        this.usoacero = usoacero;
+        this.tiempoVida = tiempoVida;
     }
 
-    public void setFACTOR_DE_EMISION(double fACTOR_DE_EMISION) {
-        FACTOR_DE_EMISION = fACTOR_DE_EMISION;
+    public double getFactor_de_Emision() {
+        return factor_de_Emision;
     }
 
-    private double FACTOR_DE_EMISION() {
-        return 0;
+    public double getcomsumoCombustible() {
+        return comsumoCombustible;
     }
 
-    private double DATO_ACTIVIDAD() {
-        return 0;
+    public void setcomsumoCombustible(double comsumoCombustible) {
+        this.comsumoCombustible = comsumoCombustible;
+    }
+
+    public double getusoacero() {
+        return usoacero;
+    }
+
+    public void setusoacero(double usoacero) {
+        this.usoacero = usoacero;
+    }
+
+    public double gettiempoVida() {
+        return tiempoVida;
+    }
+
+    public void settiempoVida(double tiempoVida) {
+        this.tiempoVida = tiempoVida;
+    }
+
+    private double dato_Actividad() {
+        return (comsumoCombustible*tiempoVida)+usoacero;
     }
 
     @Override
     public double obtenerlmpactoEcologico() {
-        return DATO_ACTIVIDAD() * FACTOR_DE_EMISION();
+        return dato_Actividad() * getFactor_de_Emision();
     }
-    
+
+    @Override
+    public String toString() {
+        return "Auto :  \nfactor_de_Emision: " + factor_de_Emision + "\ncomsumoCombustible: " + comsumoCombustible
+                + "\nusoacero: " + usoacero + "\ntiempoVida: " + tiempoVida;
+    }
 }
