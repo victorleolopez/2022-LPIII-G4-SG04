@@ -3,8 +3,8 @@ public class Cubo extends FiguraTridimensional {
     public double arista;
 
     // Constructor
-    public Cubo(String nombre, double arista) {
-        super(nombre = "Cubo");
+    public Cubo( double arista) {
+        super("Cubo");
         this.arista = arista;
     }
 
@@ -27,7 +27,7 @@ public class Cubo extends FiguraTridimensional {
     // Método toString
     @Override
     public String toString() {
-        return super.toString() + "\nArea: " + calcularArea() + "\nVolumen: " + calcularVolumen();
+        return "Area: " + calcularArea() + "\nVolumen: " + calcularVolumen();
     }
 
 }

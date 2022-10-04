@@ -4,8 +4,8 @@ public class Circulo extends FiguraBidimensional {
     private double radio;
 
     // Constructor
-    public Circulo(String nombre, double radio) {
-        super(nombre = "Circulo");
+    public Circulo( double radio) {
+        super( "Circulo");
         this.radio = radio;
     }
 
@@ -23,7 +23,7 @@ public class Circulo extends FiguraBidimensional {
     // Método toString
     @Override
     public String toString() {
-        return super.toString() + "\nArea: " + calcularArea();
+        return "Area: " + calcularArea();
     }
 
 }

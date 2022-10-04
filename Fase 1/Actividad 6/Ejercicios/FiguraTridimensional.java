@@ -5,11 +5,6 @@ public abstract class FiguraTridimensional  extends Figura{
     
     // Constructor implicito super
     public FiguraTridimensional(String nombre) {
-		super(nombre);		
+		super("Figura Tridimensional");		
 	}
-
-    @Override
-    public String toString() {
-        return "Figura Tridimensional";
-    }
 }

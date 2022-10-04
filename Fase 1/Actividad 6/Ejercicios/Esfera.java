@@ -11,8 +11,8 @@ public class Esfera extends FiguraTridimensional {
 	}
 
 	// Constructor
-    public Esfera(String nombre, double radio) {
-        super(nombre="Esfera");
+    public Esfera( double radio) {
+        super("Esfera");
         this.radio = radio;
     }
 
@@ -32,7 +32,7 @@ public class Esfera extends FiguraTridimensional {
     // Método toString
     @Override
     public String toString() {
-        return super.toString()+"\nArea: "+calcularArea()+"\nVolumen: "+calcularVolumen();        
+        return "Area: "+calcularArea()+"\nVolumen: "+calcularVolumen();        
     }
 
 }

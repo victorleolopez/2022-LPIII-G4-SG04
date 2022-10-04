@@ -3,8 +3,8 @@ public class Tetraedro extends FiguraTridimensional {
     public double arista;
 
     // Constructor
-    public Tetraedro(String nombre, double arista) {
-        super(nombre = "Tetraedro");
+    public Tetraedro( double arista) {
+        super( "Tetraedro");
         this.arista = arista;
     }
 
@@ -27,6 +27,6 @@ public class Tetraedro extends FiguraTridimensional {
     // Método toString
     @Override
     public String toString() {
-        return super.toString() + "\nArea: " + calcularArea() + "\nVolumen: " + calcularVolumen();
+        return "Area: " + calcularArea() + "\nVolumen: " + calcularVolumen();
     }
 }

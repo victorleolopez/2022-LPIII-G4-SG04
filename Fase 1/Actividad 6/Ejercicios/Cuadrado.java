@@ -3,8 +3,8 @@ public class Cuadrado extends FiguraBidimensional {
     public double lado;
 
     // Constructor
-    public Cuadrado(String nombre, double lado) {
-        super(nombre = "Cuadrado");
+    public Cuadrado( double lado) {
+        super("Cuadrado");
         this.lado = lado;
     }
 
@@ -22,7 +22,7 @@ public class Cuadrado extends FiguraBidimensional {
     // Método toString
     @Override
     public String toString() {
-        return super.toString() + "\nArea: " + calcularArea();
+        return "Area: " + calcularArea();
     }
 
 }
