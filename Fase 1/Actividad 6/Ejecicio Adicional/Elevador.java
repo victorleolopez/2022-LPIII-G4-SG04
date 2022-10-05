@@ -32,12 +32,48 @@ public class Elevador extends Edificio {
     public void Asensor(int personas) {
 
     }
-    public boolean Espacios( int personas){
-        if (personas*50>pesoFinal){
-            return true;
+
+    public void Espacios(int personas, int numero) {
+        if (numero == 1) {
+            if ((this.personas) * 50 == pesoFinal) {
+                System.out.println("Elebador lleno porfavor esperar");
+            } else {
+                if ((personas + this.personas) * 50 <= pesoFinal) {
+                    this.personas = this.personas + personas;
+                    System.out.println("Se subieron " + personas + " personas");
+                } else {
+                    System.out.println("No se puede llevar a todas las personas\nEspacio para "
+                            + (pesoFinal - (50 * this.personas)) / 50 + " Persona");
+                }
+            }
+        } else {
+            if ((this.personas - personas) * 50 < pesoFinal) {
+                this.personas = this.personas - personas;
+                System.out.println("Se bajaron " + personas + " personas");
+            } else {
+                System.out.println("No se puede llevar a todas las personas\nEspacio para "
+                        + (pesoFinal - (50 * this.personas)) / 50 + " Persona");
+            }
         }
-        else 
-            return false;
+    }
+
+    public void Paseo(int destino) {
+        System.out.println("Estamos en el piso [" + this.pisoActual + "]");
+        if (this.pisoActual < destino) {
+            for (int i = this.pisoActual+1; i < destino; i++) {
+                System.out.println("Subiendo al piso [" + i + "]");
+            }
+            System.out.println("LLegamos a su Destino al piso [" + destino + "]");
+        }
+        else{
+            for (int i = this.pisoActual-1; i > destino; i--) {
+                System.out.println("Bajando al piso [" + i + "]");
+            }
+            System.out.println("LLegamos a su Destino al piso [" + destino + "]");
+            
+        }
+        this.pisoActual = destino;
     }
 
 }
+

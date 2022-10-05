@@ -3,8 +3,8 @@ import java.util.Scanner;
 public class PruebaEdificio {
     public static void main(String[] args) {
         Scanner sn = new Scanner(System.in);
-        boolean salir = false, Espacio = false;
-        int opcion, numpiso = -1, numpersonas;
+        boolean salir = false;
+        int opcion, numpiso = -1, numpersonas = 0,piso=0;
         String nombreEdificio;
         System.out.println("************ Bienvenido al Sistema **************");
         System.out.print("Nombre del Edificio: ");
@@ -18,7 +18,7 @@ public class PruebaEdificio {
         // Menu
         do {
             // Mensajes del menu
-            System.out.println("************ Menu **************");
+            System.out.println("\n************ Menu **************");
             System.out.println("1. Datos del Edificio");
             System.out.println("2. Subir Persona");
             System.out.println("3. Bajar Persona");
@@ -34,17 +34,28 @@ public class PruebaEdificio {
                     System.out.println("Personas Acensor : " + building.getpersonas());
                     break;
                 case 2:
-                    System.out.print("Ingresar Cantidad de Personas : ");
-                    numpersonas = sn.nextInt();
-                    building.Asensor(numpersonas);
-                    break;
-                case 3:
-                    
-                    while(!Espacio) {
+                    do {
                         System.out.print("Ingresar Cantidad de Personas : ");
                         numpersonas = sn.nextInt();
-                        Espacio = building.Espacios(numpersonas);
-                    }
+                    }while (numpersonas < 0);
+                    building.Espacios(numpersonas, 1);
+                    do {
+                        System.out.print("Piso se dirige  ( 1 - "+ building.getPiso()+" ) : ");
+                        piso = sn.nextInt();
+                    }while (piso < 0 || building.getPiso()<piso);
+                    building.Paseo(piso);
+                    break;
+                case 3:
+                    do {
+                        System.out.print("Ingresar Cantidad de Personas a bajar : ");
+                        numpersonas = sn.nextInt();
+                    }while (numpersonas < 0 ||  building.getpersonas() < numpersonas );
+                    building.Espacios(numpersonas, 2);
+                    do {
+                        System.out.print("Piso se dirige  ( 1 - "+ building.getPiso()+" ) : ");
+                        piso = sn.nextInt();
+                    }while (piso < 0 || building.getPiso()<piso);
+                    building.Paseo(piso);
                     break;
                 case 4:
                     salir = true;
