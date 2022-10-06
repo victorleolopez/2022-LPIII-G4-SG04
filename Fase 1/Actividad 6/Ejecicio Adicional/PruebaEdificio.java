@@ -37,7 +37,7 @@ public class PruebaEdificio {
                     do {
                         System.out.print("Ingresar Cantidad de Personas : ");
                         numpersonas = sn.nextInt();
-                    }while (numpersonas < 0);
+                    }while (numpersonas < 1 );
                     building.Espacios(numpersonas, 1);
                     do {
                         System.out.print("Piso se dirige  ( 1 - "+ building.getPiso()+" ) : ");
@@ -54,7 +54,7 @@ public class PruebaEdificio {
                     do {
                         System.out.print("Piso se dirige  ( 1 - "+ building.getPiso()+" ) : ");
                         piso = sn.nextInt();
-                    }while (piso < 0 || building.getPiso()<piso);
+                    }while (piso < 1 || building.getPiso()<piso);
                     building.Paseo(piso);
                     break;
                 case 4:
