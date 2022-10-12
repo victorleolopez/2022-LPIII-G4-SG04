@@ -4,24 +4,26 @@ import java.io.InputStreamReader;
 import java.io.Reader;
 
 public class LeerEntrada {
+    // atributos
     private Reader stream;
+
+    // métodos
     /**
-     * contructor
-     * 
+     * Constructor
+     *
      * @param fuente la fuente de datos
      */
-    public LeerEntrada(InputStream Fuente){
-        stream = new InputStreamReader(Fuente);
-        /**
-         * Obtiene el siguiente caracter del teclado
-         * 
-         * @return el caracter escrito
-         * @thwos IOException
-         */
-        public char getChar() throw IOException{
-            return (char) this.stream.read();
-
-        }
+    public LeerEntrada(InputStream fuente) {
+        stream = new InputStreamReader(fuente);
     }
-    
+
+    /**
+     * Obtiene el siguiente carácter del teclado.
+     *
+     * @return el carácter escrito
+     * @throws IOException
+     */
+    public char getChar() throws IOException {
+        return (char) this.stream.read();
+    }
 }
