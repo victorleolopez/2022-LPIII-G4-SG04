@@ -23,7 +23,7 @@ public class MarcoDetallesRaton extends JFrame {
 
     public MarcoDetallesRaton() {
         // super("Clics y botones del raton");
-        super("Robert Duenas");
+        super("Johan Victor Daniel");
         barraEstado = new JLabel("Haga clic en el raton");
         add(barraEstado, BorderLayout.SOUTH);
         addMouseListener(new ManejadorClicRaton()); // agrega el manejador
