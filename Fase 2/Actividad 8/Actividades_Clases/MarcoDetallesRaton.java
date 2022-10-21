@@ -49,7 +49,7 @@ public class MarcoDetallesRaton extends JFrame {
 
             if (evento.isMetaDown()) { // botón derecho del ratón
                 detalles += " con el boton derecho del raton";
-                panelRaton.setBackground(Color.YELLOW);
+                panelRaton.setBackground(Color.BLUE);
             } else if (evento.isAltDown()) { // botón central del ratón
                 detalles += " con el boton central del raton";
                 panelRaton.setBackground(Color.GREEN);

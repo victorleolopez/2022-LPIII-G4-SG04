@@ -29,13 +29,14 @@ public class MarcoRastreadorRaton extends JFrame {
 
     public MarcoRastreadorRaton() {
         super("Demostracion de los eventos de raton");
+        etiqueta1.setToolTipText("Estiqueta texto no editable");
 
         etiqueta2 = new JLabel("Imagen", insecto, SwingConstants.LEFT);
-        etiqueta2.setToolTipText("Esta es etiqueta2");
+        etiqueta2.setToolTipText("Mamriposa");
 
         campoTexto1 = new JTextField("Campo de texto no editable", 21);
-        // etiqueta1.setToolTipText("Estiqueta texto no editable");
-        campoTexto1.setToolTipText("Estiqueta texto no editable");
+
+        campoTexto1.setToolTipText("Etiqueta para texto no editable");
         campoTexto1.setEditable(false);
 
         panelRaton = new JPanel();
@@ -69,6 +70,7 @@ public class MarcoRastreadorRaton extends JFrame {
             barraEstado.setText(String.format("1 Se hizo clic en [%d, %d]", evento.getX(),
                     evento.getY()));
             click = evento.getClickCount();
+
             if (evento.getSource() == etiqueta2 && etiqueta2.getIcon() != insecto) {
                 etiqueta2.setIcon(insecto);
             } else if (evento.getSource() == etiqueta2 && etiqueta2.getIcon() != insecto2) {
@@ -94,6 +96,7 @@ public class MarcoRastreadorRaton extends JFrame {
         public void mouseReleased(MouseEvent evento) {
             barraEstado.setText(String.format("3 Se solto en [%d, %d]", evento.getX(),
                     evento.getY()));
+            campoTexto1.setEditable(false);
             // etiqueta1.setText("PROBAR");
 
         }
@@ -104,6 +107,7 @@ public class MarcoRastreadorRaton extends JFrame {
             barraEstado.setText(String.format("4 Raton entro en [%d, %d]", evento.getX(),
                     evento.getY()));
             panelRaton.setBackground(Color.GREEN);
+
         }
 
         // maneja evento cuando el ratón sale del área
@@ -111,6 +115,7 @@ public class MarcoRastreadorRaton extends JFrame {
         public void mouseExited(MouseEvent evento) {
             barraEstado.setText("Raton fuera de JPanel");
             panelRaton.setBackground(Color.WHITE);
+            campoTexto1.setEditable(false);
         }
 
         // Los manejadores de eventos de MouseMotionListener manejan
