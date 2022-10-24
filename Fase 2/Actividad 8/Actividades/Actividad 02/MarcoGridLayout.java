@@ -19,7 +19,7 @@ public class MarcoGridLayout extends JFrame implements ActionListener
 // constructor sin argumentos
 public MarcoGridLayout()
      {
-	super("Demostracion de GridLayout");
+	super("Victor Leo Lopez Palza , Johan Isac Mamani jarata");
 	        cuadricula1 = new GridLayout(2, 3, 5, 5); // 2 por 3; espacios de 5
 	        cuadricula2 = new GridLayout(3, 2); // 3 por 2; sin espacios
 	        contenedor = getContentPane();

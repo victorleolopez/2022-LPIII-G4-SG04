@@ -18,7 +18,7 @@ public class MarcoFlowLayout extends JFrame
 	// establece la GUI y registra los componentes de escucha de botones
 	public MarcoFlowLayout()
 	{
-	   super("Demostracion de FlowLayout");
+	   super("Victor Leo Lopez Palza , Johan Isac Mamani jarata");
 	   
 	   esquema = new FlowLayout();
 	   contenedor = getContentPane(); // obtiene contenedor para esquema

@@ -15,7 +15,7 @@ public class MarcoBorderLayout extends JFrame implements ActionListener
 	// establece la GUI y el manejo de eventos
 	public MarcoBorderLayout()
 	     {
-		        super("Demostracion de BorderLayout");
+		        super("Victor Leo Lopez Palza , Johan Isac Mamani jarata");
 		
 		        esquema = new BorderLayout(5, 5); // espacios de 5 píxeles
 		        setLayout(esquema);
