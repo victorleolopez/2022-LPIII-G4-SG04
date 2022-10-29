@@ -1,1 +1,3 @@
-HOLA
+class TestFile {
+
+}
