@@ -1,6 +1,6 @@
 public class ArrayPersona {
     public Persona arreglo[];
-    final int max = 128;
+    final int max = 578;
     int tamano = 0;
 
     public ArrayPersona() {

@@ -8,7 +8,7 @@ public class TestFilePrueba {
         FileInputStream file;
         byte b[] = new byte[1024];
         try {
-            file = new FileInputStream("ficheros/TestFile.java");
+            file = new FileInputStream("ficheros/TestFiles.java");
             file.read(b);
             String s = new String(b);
             ViewFile view = new ViewFile(s);

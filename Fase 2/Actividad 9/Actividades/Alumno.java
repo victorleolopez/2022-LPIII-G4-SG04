@@ -21,7 +21,7 @@ public class Alumno extends Personas {
 
     @Override
     public String toString() {
-        return "Alumno [fechaMatricula=" + fechaMatricula + "]";
+        return "Alumno  [\nfechaMatricula=" + fechaMatricula + "]";
     }
     
 }

@@ -7,6 +7,10 @@ import java.util.Scanner;
 
 public class TestFile {
 
+    /**
+     * @param args
+     * @throws IOException
+     */
     public static void main(String[] args) throws IOException {
         Scanner sc = new Scanner(System.in);
         System.out.println("Escriba el nombre del archivo o directorio:");

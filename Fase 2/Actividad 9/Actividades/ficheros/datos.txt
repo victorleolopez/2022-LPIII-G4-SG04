@@ -1,3 +1,4 @@
-mesa
-libro
-cuaderno
+Hola
+Introduciendo texto
+en la archivo daos.txt
+vamos ver como esta 
