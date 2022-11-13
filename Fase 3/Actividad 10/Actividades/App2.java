@@ -1,11 +1,12 @@
 public class App2 {
     public class App {
+        //IMPLEMENTACION DEL FLOAT Y BOOLEAN
         public static void main(String[] args) throws Exception {
             Integer[] intArray = { 1, 2, 3, 4, 5 };
             Double[] doubleArray = { 1.1, 2.2, 3.3, 4.4, 5.5 };
             Character[] charArray = { 'H', 'O', 'L', 'A' };
-            //float[] floatArray = {1.5,10.5};
-            boolean [] BooleanArray={true , false ,true}
+            Float[] floatArray = {1.1f, 2.2f, 3.3f, 4.4f, 5.5f};
+            Boolean [] BooleanArray={true , false ,true , false ,true};
             System.out.printf("Array integerArray contiene:%n");
             imprimirArray(intArray);
             System.out.printf("%nArray doubleArray contiene:%n");
@@ -13,9 +14,9 @@ public class App2 {
             System.out.printf("%nArray charArray contiene:%n");
             imprimirArray(charArray);
             System.out.printf("%nArray floatArray contiene:%n");
-            //imprimirArray(floatArray);
+            imprimirArray(floatArray);
             System.out.printf("%nArray BooleanArray contiene:%n");
-            imprimirArray(boolean);
+            imprimirArray(BooleanArray);
         }
 
         public static <T> void imprimirArray(T[] inputArray) {

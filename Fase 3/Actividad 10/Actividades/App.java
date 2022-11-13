@@ -9,11 +9,6 @@ public class App {
         imprimirArray(doubleArray);
         System.out.printf("%nArray charArray contiene:%n");
         imprimirArray(charArray);
-        System.out.printf("%nArray floatArray contiene:%n");
-        imprimirArray(floatArray);
-        System.out.printf("%nArray BooleanArray contiene:%n");
-        imprimirArray(boolean);
-
     }
 
     public static void imprimirArray(Integer[] inputArray) {
