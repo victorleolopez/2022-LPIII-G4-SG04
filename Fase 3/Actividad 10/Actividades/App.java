@@ -30,17 +30,14 @@ public class App {
     public static void imprimirArray(Character[] inputArray) {
         for (Character elemento : inputArray)
             System.out.printf("%s ", elemento);
-
         System.out.println();
 
     }
 
-    public static <T> void imprimirArray(T[] inputArray) {
-        for (T elemento : inputArray)
+    public static void imprimirArray(int[] limiteInferior, int[] limiteSuperior) {
+        for (int  elemento : limiteInferior)
             System.out.printf("%s ", elemento);
-
         System.out.println();
-
     }
 
 }
