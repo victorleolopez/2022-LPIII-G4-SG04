@@ -36,18 +36,8 @@ public class Carro {
     @Override
 
     public boolean equals(Object obj) {
-        if (obj instanceof Carro) {
-            Carro carro = (Carro) obj;
-            if (this.Placa == carro.Placa) {
-                return true;
-            } else {
-                return false;
-            }
-        } else {
-            return false;
-
-        }
-
+        Carro carrocomparado = (Carro) obj;
+        return this.getplaca().equals(carrocomparado.getplaca());
     }
 
 }
