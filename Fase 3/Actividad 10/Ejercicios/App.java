@@ -1,6 +1,6 @@
 public class App {
     public static void main(String[] args) {
-        String[] inputArray = { "Uno", "Dos", "Tres", "Cuatro", "Cinco", "Seis", "Siete", "Ocho" };
+        String[] inputArray = { "Uno", "Dos", "Tres", "Cuatro", "Cinco", "Seis", "Siete", "Ocho" ,"Nueve","Diez"};
         System.out.println("Array de cadenas contiene:");
         imprimirArray(inputArray);
     }

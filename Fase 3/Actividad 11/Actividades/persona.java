@@ -1,12 +1,12 @@
-public class persona {
+public class Persona {
     private String nombres;
     private String direccion;
     private String telefono;
 
-    public persona() {
+    public Persona() {
     }
 
-    public persona(String nombres, String direccion, String telefono) {
+    public Persona(String nombres, String direccion, String telefono) {
         this.nombres = nombres;
         this.direccion = direccion;
         this.telefono = telefono;
@@ -36,4 +36,13 @@ public class persona {
         this.telefono = telefono;
     }
 
+    public boolean equals(Object obj) {
+        Persona comparado = (Persona) obj;
+        return this.getNombres().equals(comparado.getNombres());
+    }
+
+    @Override
+    public String toString() {
+        return "Persona(" + nombres + ", " + direccion + ", " + telefono + ")";
+    }
 }
