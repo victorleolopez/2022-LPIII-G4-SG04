@@ -30,7 +30,7 @@ public class CandyBags extends Bag<Goodies> {
 		burbujaDescendente(list);
 		Goodies[] list2 = new Goodies[n];
 		for (int i = 0; i < n; i++) {
-			list2[i] = list[i];
+			list2[i] = list[i] ;
 		}
 		CandyBags b1 = new CandyBags(n,this.marca);
 		b1.setList(list2);

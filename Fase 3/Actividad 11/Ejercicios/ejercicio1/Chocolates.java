@@ -25,7 +25,7 @@ public class Chocolates extends Goodies{
 
 	@Override
 	public String toString() {
-		return super.toString()+"\tSabor: " + this.sabor;
+		return super.toString()+"\nSabor: " + this.sabor;
 	}
 	
 }

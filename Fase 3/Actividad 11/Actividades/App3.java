@@ -6,9 +6,9 @@ public class App3 {
         bolsaInteger.add(2);
         System.out.println(bolsaInteger);
         bolsaInteger.add(3);
-        bolsaInteger.remove(1);
+        bolsaInteger.remove(8);
         System.out.println(bolsaInteger);
-        System.out.println("Indice " + bolsaInteger.getIndex(3));
+        System.out.println("Indice " + bolsaInteger.getIndex(9));
         System.out.println("Indice " + bolsaInteger.getIndex(2));
 
         System.out.println("\n***********  Bolsa de String ***********");

@@ -1,14 +1,11 @@
 public class Soda extends Biscuits {
-	//Atributos
 	private double cantSal;
 
-	//Constructor
 	public Soda(int id, String descripition, float price, String forma, double cantSal) {
 		super(id, descripition, price, "Salada", forma);
 		this.cantSal = cantSal;
 	}
 
-	//Getters y Setters
 	public double getCantSal() {
 		return this.cantSal;
 	}
@@ -17,7 +14,6 @@ public class Soda extends Biscuits {
 		this.cantSal = cantSal;
 	}
 
-	//Equals
 	@Override
 	public boolean equals(Object obj) {
 		if (obj instanceof Soda) {
@@ -27,11 +23,10 @@ public class Soda extends Biscuits {
 		}
 		return false;
 	}
-	
-	//To String
+
 	@Override
 	public String toString() {
-		return super.toString()+"\tCantidad Sal : " + this.cantSal ;
+		return super.toString()+"\nCantidad Sal : " + this.cantSal ;
 	}
 	
 }

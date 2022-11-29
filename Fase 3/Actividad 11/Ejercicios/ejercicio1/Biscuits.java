@@ -36,6 +36,6 @@ public class Biscuits extends Goodies {
 	
 	@Override
 	public String toString() {
-		return super.toString()+"\tTipo: " + this.tipo + "\tForma: " + this.forma ;
+		return super.toString()+"\nTipo: " + this.tipo + "\nForma: " + this.forma ;
 	}
 }

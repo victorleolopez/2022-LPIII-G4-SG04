@@ -26,7 +26,7 @@ public class Soda extends Biscuits {
 	
 	@Override
 	public String toString() {
-		return super.toString()+"\tCantidad Sal : " + this.cantSal ;
+		return super.toString()+"\nCantidad Sal : " + this.cantSal ;
 	}
 	
 }

@@ -57,7 +57,7 @@ public class Bagg<T extends Goodies> {
 
 	@Override
 	public String toString() {
-		return "Bag" + "\nList : " + Arrays.toString(list) + "\nCount : " + count;
+		return "Bag" + "\nList" + Arrays.toString(list) + "\nCount : " + count;
 	}
 
 }

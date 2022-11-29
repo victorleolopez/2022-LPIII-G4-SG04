@@ -1,16 +1,13 @@
 public class Biscuits extends Goodies {
-	// Atributos
 	private String tipo;
 	private String forma;
 
-	// Constructor
 	public Biscuits(int id, String descripition, float price, String tipo, String forma) {
 		super(id, descripition, price);
 		this.tipo = tipo;
 		this.forma = forma;
 	}
 
-	// Getters y Setters
 	public String getTipo() {
 		return this.tipo;
 	}
@@ -27,7 +24,6 @@ public class Biscuits extends Goodies {
 		this.forma = forma;
 	}
 
-	// Equals
 	@Override
 	public boolean equals(Object obj) {
 		if (obj instanceof Biscuits) {
@@ -40,6 +36,6 @@ public class Biscuits extends Goodies {
 
 	@Override
 	public String toString() {
-		return super.toString() + "\tTipo: " + this.tipo + "\tForma: " + this.forma;
+		return super.toString() + "\nTipo: " + this.tipo + "\nForma: " + this.forma;
 	}
 }

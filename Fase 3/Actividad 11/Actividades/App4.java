@@ -5,10 +5,9 @@ public class App4 {
 	public static void main(String[] args) throws IsFull, IsEmpty, ObjectNoExist {
 
 		try {
-			// Instanciaci�n de la clase generica para Goodies
+
 			Bagg<Goodies> bagGoodies = new Bagg<Goodies>(2);
 
-			// Usando el metodo add
 			Goodies g1 = new Goodies(1, "Galletas", 1.5f);
 			Goodies g2 = new Goodies(2, "Chocolate", 2.5f);
 			Goodies g3 = new Goodies(3, "Papitas", 1.5f);
@@ -17,19 +16,16 @@ public class App4 {
 			bagGoodies.add(g2);
 			System.out.println(bagGoodies);
 
-			// Usando el metodo getIndex
 			System.out.print("El Galletas se encuentra en la Posicion : ");
 			System.out.println(bagGoodies.getIndex(g1));
 			System.out.print("El Papitas se encuentra en la Posicion : ");
 			System.out.println(bagGoodies.getIndex(g3));
 
-			// Usando el metodo remove
 			System.out.println("Se elimino el numero : " + bagGoodies.remove(g2));
 			System.out.println(bagGoodies);
 			bagGoodies.add(g3);
 			System.out.println(bagGoodies);
 
-			// Usando el metodo getObjects
 			System.out.println("Usando getObjects");
 			System.out.println(Arrays.toString(bagGoodies.getObjects()));
 			System.out.println(" ");

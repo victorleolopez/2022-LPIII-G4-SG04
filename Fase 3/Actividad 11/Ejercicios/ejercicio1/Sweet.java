@@ -26,7 +26,7 @@ public class Sweet extends Biscuits{
 
 	@Override
 	public String toString() {
-		return super.toString()+"\tCantidad de Azucar: " + this.cantAzucar ;
+		return super.toString()+"\nCantidad de Azucar: " + this.cantAzucar ;
 	}
 
 }
