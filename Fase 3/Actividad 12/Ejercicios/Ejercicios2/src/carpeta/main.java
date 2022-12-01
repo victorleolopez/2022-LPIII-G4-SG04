@@ -18,6 +18,7 @@ public class main extends javax.swing.JFrame {
     funcionesGenerales funciones = new funcionesGenerales();
     DefaultTableModel tablemodel;
     DefaultTableModel molde;
+    boolean opc;
     int fila ;
 
 
@@ -26,6 +27,8 @@ public class main extends javax.swing.JFrame {
      */
     public main() {
         initComponents();
+        setLocationRelativeTo(null);
+        opc = false;
         
         try {
             tablemodel = funciones.mostrardatos();
@@ -39,6 +42,19 @@ public class main extends javax.swing.JFrame {
         txtnombrelast.setText(tablemodel.getValueAt(fila, 2).toString());
         txtemail.setText(tablemodel.getValueAt(fila, 3).toString());
         txtnumero.setText(tablemodel.getValueAt(fila, 4).toString());
+    }
+    public main(int a) {
+        initComponents();
+        setLocationRelativeTo(null);
+        opc = true;
+        txtpos1.setText("");
+        txtpos2.setText("");
+        txtadress.setText("");
+        txtnombre.setText("");
+        txtnombrelast.setText("");
+        txtemail.setText("");
+        txtnumero.setText("");
+        btninsert.setText("Guardar");
     }
 
     /**
@@ -264,9 +280,23 @@ public class main extends javax.swing.JFrame {
 
     private void btninsertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btninsertActionPerformed
         // TODO add your handling code here:
-        dispose();
-        Registrar p1 = new Registrar();
-        p1.setVisible(true);
+        if (!opc){
+            dispose();
+            funciones.registre(); 
+            if (!txtadress.getText().equals("")){
+            contacto regis = new contacto();
+            regis.setIdAddress(Integer.parseInt(txtadress.getText()));
+            regis.setFirstName(txtnombre.getText());
+            regis.setLastName(txtnombrelast.getText());
+            regis.setEmail(txtemail.getText());
+            regis.setPhoneNumber(Integer.parseInt(txtnumero.getText()));
+        try {
+            funciones.Insertdat(regis);
+        } catch (SQLException ex) {
+            Logger.getLogger(Registrar.class.getName()).log(Level.SEVERE, null, ex);
+        }
+            }
+        }        
     }//GEN-LAST:event_btninsertActionPerformed
 
     private void txtpos1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtpos1ActionPerformed
@@ -309,17 +339,25 @@ public class main extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
+        int nuevafila = 0;
         try {
             molde = funciones.buscardato(principalname.getText());
         } catch (SQLException ex) {
             Logger.getLogger(main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        for (int i=0;i<Integer.parseInt(txtpos2.getText());i++){
+           if (tablemodel.getValueAt(i, 0).toString().equals(molde.getValueAt(fila, 0).toString())) {
+               System.out.println("encontrado  "+ i);
+               nuevafila = i;
+           } 
         }
         txtadress.setText(molde.getValueAt(fila, 0).toString());
         txtnombre.setText(molde.getValueAt(fila, 1).toString());
         txtnombrelast.setText(molde.getValueAt(fila, 2).toString());
         txtemail.setText(molde.getValueAt(fila, 3).toString());
         txtnumero.setText(molde.getValueAt(fila, 4).toString());
-        txtpos1.setText(Integer.toString(fila+1));
+        txtpos1.setText(Integer.toString(nuevafila+1));
+        fila = nuevafila;
     }//GEN-LAST:event_jButton3ActionPerformed
 
     /**

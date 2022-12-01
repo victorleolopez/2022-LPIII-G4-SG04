@@ -41,6 +41,11 @@ public class funcionesGenerales {
         }
         return modelotable;
     }
+    public void registre(){
+        
+        main p1 = new main(1);
+        p1.setVisible(true);
+    }
     
     public DefaultTableModel buscardato(String inf) throws SQLException {
         DefaultTableModel modelotable;
@@ -55,7 +60,6 @@ public class funcionesGenerales {
             list [3]=re.getString("email");
             list [4]=re.getString("phoneNumber");
             modelotable.addRow(list);
-            numero++;
         }
         return modelotable;
     }
@@ -68,15 +72,6 @@ public class funcionesGenerales {
                         + "'" + dat.getLastName() + "', '" + dat.getEmail() + "', '" + dat.getPhoneNumber()
                         + "')");
         javax.swing.JOptionPane.showMessageDialog(null, "¡Usuario registrado correctamente! \n", "HECHO",
-                javax.swing.JOptionPane.INFORMATION_MESSAGE);
-    }
-
-    public void Editdat(contacto dat) throws SQLException {
-        Statement stm = conn.createStatement();
-        stm.executeUpdate("UPDATE `agenda` SET `idAddress` = '" + dat.getIdAddress() + "', `firstName` = '" + dat.getFirstName() + "', "
-                + "`lastName` = '" + dat.getLastName()+ "', "+ "`email` = '" + dat.getEmail()
-                + "', `phoneNumber` = '" + dat.getPhoneNumber() + "' WHERE `idAddress` = " + dat.getIdAddress() + ";");
-        javax.swing.JOptionPane.showMessageDialog(null, "¡Usuario editado correctamente! \n", "HECHO",
                 javax.swing.JOptionPane.INFORMATION_MESSAGE);
     }
 }

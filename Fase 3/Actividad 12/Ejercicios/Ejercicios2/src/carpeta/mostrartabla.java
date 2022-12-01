@@ -22,6 +22,7 @@ public class mostrartabla extends javax.swing.JFrame {
      */
     public mostrartabla() {
         initComponents();
+        setLocationRelativeTo(null);
         try {
             modelos = funciones.mostrardatos();
         } catch (SQLException ex) {

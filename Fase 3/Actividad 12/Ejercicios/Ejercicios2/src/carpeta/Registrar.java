@@ -21,6 +21,7 @@ public class Registrar extends javax.swing.JFrame {
      */
     public Registrar() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -152,21 +153,7 @@ public class Registrar extends javax.swing.JFrame {
 
     private void btnbrowseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbrowseActionPerformed
 
-            contacto regis = new contacto();
-            regis.setIdAddress(Integer.parseInt(txtadress.getText()));
-            regis.setFirstName(txtnombre.getText());
-            regis.setLastName(txtnombrelast.getText());
-            regis.setEmail(txtemail.getText());
-            regis.setPhoneNumber(Integer.parseInt(txtnumero.getText()));
-        try {
-            funciones.Insertdat(regis); 
-// TODO add your handling code here:
-        } catch (SQLException ex) {
-            Logger.getLogger(Registrar.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        dispose();
-            Registrar p1 = new Registrar();
-            p1.setVisible(true);
+
     }//GEN-LAST:event_btnbrowseActionPerformed
 
     private void RegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegresarActionPerformed

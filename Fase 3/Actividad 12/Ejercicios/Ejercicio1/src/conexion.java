@@ -19,7 +19,7 @@ public class conexion {
     private static final String driver = "com.mysql.cj.jdbc.Driver";
     private static final String user = "root";
     private static final String pass = "";
-    private static final String db = "Cursos";
+    private static final String db = "laboratorio";
     private static final String url = "jdbc:mysql://localhost/" + db + "";
     
     public conexion() {

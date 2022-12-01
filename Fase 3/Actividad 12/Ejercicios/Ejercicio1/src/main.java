@@ -28,7 +28,7 @@ public class main extends javax.swing.JFrame {
         BtnMostrar = new javax.swing.JButton();
         jTextSQL = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        TMostrar = new javax.swing.JTable();
+        jllenar = new javax.swing.JTable();
         jTextFiltrar = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         BtnFiltrar = new javax.swing.JButton();
@@ -42,7 +42,7 @@ public class main extends javax.swing.JFrame {
             }
         });
 
-        TMostrar.setModel(new javax.swing.table.DefaultTableModel(
+        jllenar.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -53,7 +53,7 @@ public class main extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(TMostrar);
+        jScrollPane1.setViewportView(jllenar);
 
         jLabel1.setText("Filter");
 
@@ -125,7 +125,7 @@ public class main extends javax.swing.JFrame {
         } catch (SQLException ex) {
             Logger.getLogger(main.class.getName()).log(Level.SEVERE, null, ex);
         }
-        TMostrar.setModel(tablemodel);
+        jllenar.setModel(tablemodel);
     }//GEN-LAST:event_BtnMostrarActionPerformed
 
     private void BtnFiltrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnFiltrarActionPerformed
@@ -134,7 +134,7 @@ public class main extends javax.swing.JFrame {
         } catch (SQLException ex) {
             Logger.getLogger(main.class.getName()).log(Level.SEVERE, null, ex);
         }
-        TMostrar.setModel(tablemodel);
+        jllenar.setModel(tablemodel);
     }//GEN-LAST:event_BtnFiltrarActionPerformed
 
 
@@ -150,12 +150,12 @@ public class main extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnFiltrar;
     public javax.swing.JButton BtnMostrar;
-    public javax.swing.JTable TMostrar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextFiltrar;
     private javax.swing.JTextField jTextSQL;
+    public javax.swing.JTable jllenar;
     // End of variables declaration//GEN-END:variables
 
 }
